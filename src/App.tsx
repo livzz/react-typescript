@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Message from './Message'
+import Wallet from './components/wallet'
 
 function App() {
   // tuple
@@ -18,6 +19,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Message name="Fron" message="Urgent Message" />
+        <Wallet />
       </header>
     </div>
   );
