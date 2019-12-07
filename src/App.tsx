@@ -3,15 +3,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import Message from './Message'
 import Wallet from './components/wallet'
+import { connect } from 'react-redux'
+import { Creators } from './reducer/loot/actions'
 
-function App() {
-  // tuple
-  // let aTuple: [string, number] = ["hello", 35];
-  // enum
-  // enum codes {
-  //   first = 1,
-  //   second
-  // }
+interface App {
+  debit: Function,
+  credit: Function
+}
+
+export function App(props: App) {
   const [amount, setAmount] = React.useState(0);
 
   return (
@@ -21,12 +21,21 @@ function App() {
         <Message name="Fron" message="Urgent Message" />
         <Wallet />
         <div>
-          <label htmlFor="inputAmount">Amount</label>
+          <label htmlFor="inputAmount" style={{ marginRight: 8 }}>Amount</label>
           <input id="inputAmount" value={amount} className='input-amount' onChange={({ target: { value } }) => setAmount(parseInt(value))} />
+          <button className="btn-submit debit" onClick={() => props.debit(amount)}>Debit</button>
+          <button className="btn-submit credit" onClick={() => props.credit(amount)}>Credit</button>
         </div>
       </header>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch: Function) => {
+  return {
+    debit: (amount: Number) => dispatch(Creators.debit(amount)),
+    credit: (amount: Number) => dispatch(Creators.credit(amount))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);

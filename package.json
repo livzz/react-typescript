@@ -13,6 +13,7 @@
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "reduxsauce": "^1.1.1",
+    "sfcookies": "^1.0.2",
     "typescript": "^3.6.4"
   },
   "scripts": {
