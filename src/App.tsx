@@ -12,7 +12,7 @@ function App() {
   //   first = 1,
   //   second
   // }
-
+  const [amount, setAmount] = React.useState(0);
 
   return (
     <div className="App">
@@ -20,6 +20,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Message name="Fron" message="Urgent Message" />
         <Wallet />
+        <div>
+          <label htmlFor="inputAmount">Amount</label>
+          <input id="inputAmount" value={amount} className='input-amount' onChange={({ target: { value } }) => setAmount(parseInt(value))} />
+        </div>
       </header>
     </div>
   );

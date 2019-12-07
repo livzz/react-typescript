@@ -31,7 +31,7 @@ describe('Loot Reducers', () => {
     const amount = 99;
     expect(reducer({ balance }, Creators.debit(amount))).toEqual({ balance: balance + amount })
   })
-  it('credit from balance', () => {
+  it('credit to balance', () => {
     const balance = 100;
     const amount = 99;
     expect(reducer({ balance }, Creators.credit(amount))).toEqual({ balance: balance - amount })

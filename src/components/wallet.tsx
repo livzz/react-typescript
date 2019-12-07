@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'
 
 interface Wallet {
@@ -6,11 +6,14 @@ interface Wallet {
 }
 
 export const Wallet = (props: Wallet) => {
-  return (<div>
-    <h3 className="balance">
-      Wallet balance: {props.balance}
-    </h3>
-  </div>)
+
+  return (
+    <div>
+      <h3 className="balance">
+        Wallet balance: {props.balance}
+      </h3>
+    </div>
+  )
 }
 
 const mapStatetoProps = (state: any) => {
