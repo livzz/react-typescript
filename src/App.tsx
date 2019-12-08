@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Message from './Message'
 import Wallet from './components/wallet'
+import Loot from './components/Loot'
 import { connect } from 'react-redux'
 import { Creators } from './reducer/loot/actions'
 
@@ -20,6 +21,7 @@ export function App(props: App) {
         <img src={logo} className="App-logo" alt="logo" />
         <Message name="Fron" message="Urgent Message" />
         <Wallet />
+        <Loot />
         <div>
           <label htmlFor="inputAmount" style={{ marginRight: 8 }}>Amount</label>
           <input id="inputAmount" value={amount} className='input-amount' onChange={({ target: { value } }) => setAmount(parseInt(value))} />
